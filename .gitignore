@@ -2,6 +2,3 @@
 node_modules/
 dist/
 coverage/
-main.ts
-polyfills.ts
-vendor.ts

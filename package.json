@@ -2,19 +2,21 @@
   "name": "MagicTheGatheringWebsite",
   "version": "1.0.0",
   "description": "Magic The Gathering Website",
-  // "license": "GPL-3.0",
-  // "repository": {
-  //   "type": "GIT",
-  //   "url": "https://github.com/Tynarus/angular-seed"
-  // },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/Vongkhamsay/MagicTheGatheringWebsite"
+  },
   "scripts": {
-    "start": "webpack-dev-server --inline --config config/build/webpack.dev.js --progress --port 3000",
-    "test": "karma start config/test/karma.conf.js",
+    "build": "rimraf dist && webpack --config config/build/webpack.dev.js --progress --profile --bail",
+    "clean": "npm cache clean && npm run rimraf -- node_modules doc coverage dist",
     "coverage": "npm run lint && karma start config/test/karma.conf.js --coverage=true",
     "lint": "tslint -c config/tslint.json \"src/app/**/*.ts\"",
     "pretest": "npm run lint",
-    "build": "rimraf dist && webpack --config config/build/webpack.prod.js --progress --profile --bail",
-    "server": "node config/server/prod-server.js"
+    "rimraf": "rimraf",
+    "server": "node config/server/prod-server.js",
+    "start": "webpack-dev-server --inline --config config/build/webpack.dev.js --progress --port 3000",
+    "test": "karma start config/test/karma.conf.js"
   },
   "dependencies": {
     "@angular/common": "^4.3.6",

@@ -1,7 +1,6 @@
 import { HttpModule, Http } from '@angular/http';
 import { Component, OnInit } from "@angular/core";
-import 'whatwg-fetch'
-import { Observable } from "rxjs/Observable";
+import { Observable } from 'rxjs/Rx';
 @Component({
     selector: "tyn-home",
     templateUrl: './home.component.html',
@@ -32,10 +31,10 @@ export class HomeComponent implements OnInit {
         const endpoint = 'https://api.magicthegathering.io/v1/cards';
 
         return this.http
-        .get(endpoint)//, {search: searchParams})
-        .map((res ) => {
-            return res.json()
-        })
+            .get(endpoint)//, {search: searchParams})
+            .map((res: any) => {
+                return res.json()
+            })
         // fetch('https://api.magicthegathering.io/v1/cards')
         //     .then(function (response) {
         //         debugger
