@@ -1,3 +1,4 @@
+import { HomeModule } from './route/home/home.module';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,14 +14,14 @@ import { HomeComponent } from './route/home/home.component';
         BrowserModule,
         FormsModule,
         HttpModule,
-        APP_ROUTING
+        APP_ROUTING,
+        HomeModule
     ],
     declarations: [
-        AppComponent,
-        HomeComponent
+        AppComponent
     ],
     bootstrap: [
         AppComponent
     ]
 })
-export class AppModule {}
+export class AppModule { }
