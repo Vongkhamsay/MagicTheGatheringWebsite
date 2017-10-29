@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 
-const cardsUri = 'https://api.magicthegathering.io/v1/cards';
+const cardsUri = 'https://api.magicthegathering.io/v1/cards?name=';
 
 @Injectable()
 export class SearchService {
@@ -14,9 +14,10 @@ export class SearchService {
 
     }
 
-    public getCards(): Observable<Card[]> {
+    public getCards(cardName: string): Observable<Card[]> {
+        debugger;
         let cards: Card[];
-        return this.http.get(cardsUri).map((response: any ) => {
+        return this.http.get(cardsUri + cardName).map((response: any) => {
             cards = response.json().cards;
             return cards;
         });

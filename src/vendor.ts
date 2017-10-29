@@ -8,3 +8,7 @@ import "@angular/router";
 
 // RxJS
 import "rxjs";
+
+// Angular Material
+import "@angular/material";
+// import "@angular/material/prebuilt-themes/indigo-pink.css";

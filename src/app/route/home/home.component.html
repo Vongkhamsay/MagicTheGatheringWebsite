@@ -1,5 +1,17 @@
 <div class="tyn-home">
-    <button (click)="getCards()">Get me ma cards</button>
-    <p>{{x.setName}}</p>
-    <span><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=73937&type=card"></span>
+    <form [formGroup]="form">
+        <input formControlName="name" placeholder="Enter card name...">
+        <button type="submit" (click)="getCards()">Search</button>
+    </form>
+    <div *ngIf="x">
+        <!-- <span>{{x | json}}</span> -->
+        <div *ngFor="let cards of x; let i = index">
+            <span>{{i}}</span>
+            <a (click)="getCard(cards)">{{cards.name}} | {{cards.setName}}</a>
+        </div>
+        <!-- <img src="{{x.imageUrl}}"> -->
+    </div>
+    <div *ngIf="image">
+        <img src="{{image}}">
+    </div>
 </div>

@@ -3,11 +3,11 @@ export class Card {
     name: string;
     layout: string;
     cmc: string;
-    colors: string;
+    colors: string[];
     type: string;
     supertypes: string;
-    types: string;
-    subtypes: string;
+    types: string[];
+    subtypes: string[];
     rarity: string;
     set: string;
     setName: string;
@@ -21,8 +21,10 @@ export class Card {
     language: string;
     gameFormat: string;
     legality: string;
+    contains: string;
     id: string;
-    multiverseid: string
+    multiverseid: string;
+    imageUrl: string;
 
     constructor(card: Card) {
         this.name = card.name;
@@ -46,7 +48,9 @@ export class Card {
         this.language = card.language;
         this.gameFormat = card.gameFormat;
         this.legality = card.legality;
+        this.contains = card.contains;
         this.id = card.id;
         this.multiverseid = card.multiverseid;
+        this.imageUrl = card.imageUrl;
     }
 }
