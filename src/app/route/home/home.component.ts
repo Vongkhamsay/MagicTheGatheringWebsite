@@ -13,7 +13,6 @@ import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
     styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-    y: Card[];
     x: Card[];
     image: string;
     form: FormGroup;
@@ -31,20 +30,20 @@ export class HomeComponent implements OnInit {
             name: ['', Validators.required]
         });
 
-        this.form.controls['name'].valueChanges.debounceTime(500).subscribe(form => {
+        this.form.controls['name'].valueChanges.debounceTime(200).subscribe(form => {
             this.getCards();
         });
     }
 
     getCards() {
         this.searchService.getCards(this.form.value.name).subscribe((response: Card[]) => {
-            this.y = response;
             this.x = response;
             debugger;
         })
     }
 
     getCard(card: Card) {
+        debugger;
         this.image = card.imageUrl;
         this.openDialog();
     }
@@ -60,19 +59,6 @@ export class HomeComponent implements OnInit {
             console.log('The dialog was closed');
         });
     }
-
-    // fetch('https://api.magicthegathering.io/v1/cards')
-    //     .then(function (response) {
-    //         debugger
-    //         return response.json()
-    //     }).then(function (json) {
-    //         console.log('parsed json', json)
-    //         y = json;
-    //         return y;
-    //     }).catch(function (ex) {
-    //         console.log('parsing failed', ex)
-    //         y = ex;
-    //     })
 }
 
 
