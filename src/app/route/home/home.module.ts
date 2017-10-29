@@ -1,3 +1,5 @@
+import { DialogDataExampleDialog } from './home-dialog';
+import { AngularMaterialModule } from './../../shared/modules/angular-material-design';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home.component';
@@ -7,16 +9,21 @@ import { SearchService } from '../../shared/export';
 @NgModule({
     imports: [
         CommonModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        AngularMaterialModule,
     ],
     providers: [
         SearchService
     ],
     declarations: [
-        HomeComponent
+        HomeComponent,
+        DialogDataExampleDialog
     ],
     exports: [
-        HomeComponent
+        HomeComponent,
+    ],
+    entryComponents: [
+        DialogDataExampleDialog
     ]
 })
 export class HomeModule { }

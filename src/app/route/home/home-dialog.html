@@ -1,0 +1,8 @@
+<div class="tyn-home">
+    <div *ngIf="data.imageUrl">
+        <img src="{{data.imageUrl}}">
+    </div>
+    <div *ngIf="!data.imageUrl">
+        <span>No image available.</span>
+    </div>
+</div>

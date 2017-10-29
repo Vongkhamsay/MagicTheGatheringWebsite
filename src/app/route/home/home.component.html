@@ -1,6 +1,14 @@
 <div class="tyn-home">
     <form [formGroup]="form">
-        <input formControlName="name" placeholder="Enter card name...">
+        <mat-form-field class="example-full-width">
+            <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="name" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of x" [value]="option.name">
+                    {{ option.name }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <!-- <input formControlName="name" placeholder="Enter card name..."> -->
         <button type="submit" (click)="getCards()">Search</button>
     </form>
     <div *ngIf="x">
