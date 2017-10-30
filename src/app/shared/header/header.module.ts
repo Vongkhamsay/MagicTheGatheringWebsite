@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { AngularMaterialModule } from './../modules/angular-material-design';
 import { HeaderComponent } from './header.component';
 import { CommonModule } from '@angular/common';
@@ -8,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     imports: [
         CommonModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         AngularMaterialModule
     ],
     providers: [

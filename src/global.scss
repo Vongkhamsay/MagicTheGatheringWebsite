@@ -10,3 +10,11 @@ body {
 	font-family: $primary-font;
 	font-size: $primary-font-size;
 }
+
+.hero.is-fullheight {
+	min-height: 94vh;
+}
+
+.cdk-overlay-pane {
+	width: 75% !important;
+}

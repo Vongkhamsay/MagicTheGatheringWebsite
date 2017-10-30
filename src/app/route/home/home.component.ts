@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     image: string;
     form: FormGroup;
     constructor(
-        private http: Http,
         private searchService: SearchService,
         private formBuilder: FormBuilder,
         private dialog: MatDialog,
@@ -43,16 +42,14 @@ export class HomeComponent implements OnInit {
     }
 
     getCard(card: Card) {
-        debugger;
-        this.image = card.imageUrl;
-        this.openDialog();
+        this.openDialog(card);
     }
 
-    openDialog(): void {
+    openDialog(card: Card): void {
         debugger;
         let dialogRef = this.dialog.open(DialogDataExampleDialog, {
             width: '250px',
-            data: { imageUrl: this.image }
+            data: { card: card }
         });
 
         dialogRef.afterClosed().subscribe(result => {
