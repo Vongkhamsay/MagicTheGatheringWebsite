@@ -1,13 +1,11 @@
-import { DialogDataExampleDialog } from './home-dialog';
 import { Card } from './../../shared/models/card';
 import { SearchService } from './../../shared/services/search.service';
 import { HttpModule, Http } from '@angular/http';
 import { Component, OnInit, Inject } from "@angular/core";
 
 @Component({
-    selector: "tyn-home",
-    templateUrl: './home.component.html',
-    styleUrls: ["./home.component.scss"]
+    templateUrl: './card-detail.component.html',
+    styleUrls: ["./card-detail.component.scss"]
 })
 export class CardDetailComponent implements OnInit {
 
