@@ -2,32 +2,39 @@
   "name": "MagicTheGatheringWebsite",
   "version": "1.0.0",
   "description": "Magic The Gathering Website",
-  // "license": "GPL-3.0",
-  // "repository": {
-  //   "type": "GIT",
-  //   "url": "https://github.com/Tynarus/angular-seed"
-  // },
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "GIT",
+    "url": "https://github.com/Vongkhamsay/MagicTheGatheringWebsite"
+  },
   "scripts": {
-    "start": "webpack-dev-server --inline --config config/build/webpack.dev.js --progress --port 3000",
-    "test": "karma start config/test/karma.conf.js",
+    "build": "rimraf dist && webpack --config config/build/webpack.dev.js --progress --profile --bail",
+    "clean": "npm cache clean && npm run rimraf -- node_modules doc coverage dist",
     "coverage": "npm run lint && karma start config/test/karma.conf.js --coverage=true",
     "lint": "tslint -c config/tslint.json \"src/app/**/*.ts\"",
     "pretest": "npm run lint",
-    "build": "rimraf dist && webpack --config config/build/webpack.prod.js --progress --profile --bail",
-    "server": "node config/server/prod-server.js"
+    "rimraf": "rimraf",
+    "server": "node config/server/prod-server.js",
+    "start": "webpack-dev-server --inline --config config/build/webpack.dev.js --progress --port 3000",
+    "test": "karma start config/test/karma.conf.js"
   },
   "dependencies": {
-    "@angular/common": "^4.3.6",
-    "@angular/compiler": "^4.3.6",
-    "@angular/core": "^4.3.6",
-    "@angular/forms": "^4.3.6",
-    "@angular/http": "^4.3.6",
-    "@angular/platform-browser": "^4.3.6",
-    "@angular/platform-browser-dynamic": "^4.3.6",
-    "@angular/router": "^4.3.6",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.4.2",
-    "zone.js": "^0.8.14"
+    "@angular/animations": "4.4.x",
+    "@angular/cdk": "2.0.0-beta.12",
+    "@angular/common": "4.4.x",
+    "@angular/compiler": "4.4.x",
+    "@angular/core": "4.4.x",
+    "@angular/forms": "4.4.x",
+    "@angular/http": "4.4.x",
+    "@angular/material": "2.0.0-beta.12",
+    "@angular/platform-browser": "4.4.x",
+    "@angular/platform-browser-dynamic": "4.4.x",
+    "@angular/router": "4.4.x",
+    "bulma": "^0.6.0",
+    "core-js": "2.5.x",
+    "hammerjs": "2.0.x",
+    "rxjs": "5.5.x",
+    "zone.js": "0.8.x"
   },
   "devDependencies": {
     "@types/jasmine": "~2.5.53",

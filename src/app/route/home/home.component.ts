@@ -1,54 +1,61 @@
+import { DialogDataExampleDialog } from './home-dialog';
+import { Card } from './../../shared/models/card';
+import { SearchService } from './../../shared/services/search.service';
 import { HttpModule, Http } from '@angular/http';
-import { Component, OnInit } from "@angular/core";
-import 'whatwg-fetch'
-import { Observable } from "rxjs/Observable";
+import { Component, OnInit, Inject } from "@angular/core";
+import { Observable } from 'rxjs/Rx';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+
 @Component({
     selector: "tyn-home",
     templateUrl: './home.component.html',
     styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
-    x: any;
-    z: Observable<any> = new Observable;
+    x: Card[];
+    image: string;
+    form: FormGroup;
     constructor(
-        private http: Http
+        private searchService: SearchService,
+        private formBuilder: FormBuilder,
+        private dialog: MatDialog,
     ) {
 
     }
 
     ngOnInit() {
+        this.form = this.formBuilder.group({
+            name: ['', Validators.required]
+        });
 
-    }
-
-    getCards() {
-        this.getCard().subscribe((response) => {
-            debugger;
-            this.x = response.cards[0];
+        this.form.controls['name'].valueChanges.debounceTime(200).subscribe(form => {
+            this.getCards();
         });
     }
 
-    getCard(): Observable<any> {
-        let y: any;
-        const endpoint = 'https://api.magicthegathering.io/v1/cards';
-
-        return this.http
-        .get(endpoint)//, {search: searchParams})
-        .map((res ) => {
-            return res.json()
+    getCards() {
+        this.searchService.getCards(this.form.value.name).subscribe((response: Card[]) => {
+            this.x = response;
+            debugger;
         })
-        // fetch('https://api.magicthegathering.io/v1/cards')
-        //     .then(function (response) {
-        //         debugger
-        //         return response.json()
-        //     }).then(function (json) {
-        //         console.log('parsed json', json)
-        //         y = json;
-        //         return y;
-        //     }).catch(function (ex) {
-        //         console.log('parsing failed', ex)
-        //         y = ex;
-        //     })
     }
 
+    getCard(card: Card) {
+        this.openDialog(card);
+    }
 
+    openDialog(card: Card): void {
+        debugger;
+        let dialogRef = this.dialog.open(DialogDataExampleDialog, {
+            width: '250px',
+            data: { card: card }
+        });
+
+        dialogRef.afterClosed().subscribe(result => {
+            console.log('The dialog was closed');
+        });
+    }
 }
+
+

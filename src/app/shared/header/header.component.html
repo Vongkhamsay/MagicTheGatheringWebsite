@@ -1,0 +1,71 @@
+<!-- <mat-toolbar color="primary">
+    <span>MTG Look-up</span> -->
+
+<!-- This fills the remaining space of the current row -->
+<!-- <span class="example-fill-remaining-space"></span> -->
+
+<!-- <button mat-button>Click me!</button>
+    <button mat-button>Click me!</button>
+    <button mat-button>Click me!</button>
+
+    <span class="example-fill-remaining-space"></span>
+    <button mat-button>Linkedin</button>
+    <button mat-button>Click me!</button>
+    <button mat-button>Click me!</button>
+    
+
+</mat-toolbar>
+
+<button mat-button>Click me!</button>
+<span matTooltip="Tooltip!">I have a tooltip</span> -->
+<div class="hero-head">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <b class="navbar-item navbar-logo">
+                    CardGatherer
+                </b>
+                <form class="navbar-item" [formGroup]="form">
+                    <p class="control has-icons-left is-expanded">
+                        <input class="input is-medium is-primary" type="text" placeholder="Search for Magic Cards" matInput formControlName="name"
+                            [matAutocomplete]="auto">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-search"></i>
+                        </span>
+                        <mat-autocomplete #auto="matAutocomplete">
+                            <mat-option *ngFor="let card of x" [value]="card.name" (click)="getCard(card)">
+                                {{ card.name }} | {{card.setName}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </p>
+                </form>
+                <span class="navbar-burger burger" data-target="navbarMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <!-- <a class="navbar-item is-active">
+                        Home
+                    </a>
+                    <a class="navbar-item">
+                        Examples
+                    </a>
+                    <a class="navbar-item">
+                        Documentation
+                    </a> -->
+                    <span class="navbar-item">
+                        <a class="button is-white is-outlined is-small" href="https://github.com/Vongkhamsay">
+                            <span class="icon">
+                                <i class="fa fa-github"></i>
+                            </span>
+                            <span>View Source</span>
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
