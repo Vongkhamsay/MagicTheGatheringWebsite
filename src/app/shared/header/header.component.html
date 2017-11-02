@@ -25,20 +25,6 @@
                 <b class="navbar-item navbar-logo">
                     CardGatherer
                 </b>
-                <form class="navbar-item" [formGroup]="form">
-                    <p class="control has-icons-left is-expanded">
-                        <input class="input is-medium is-primary" type="text" placeholder="Search for Magic Cards" matInput formControlName="name"
-                            [matAutocomplete]="auto">
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-search"></i>
-                        </span>
-                        <mat-autocomplete #auto="matAutocomplete">
-                            <mat-option *ngFor="let card of x" [value]="card.name" (click)="getCard(card)">
-                                {{ card.name }} | {{card.setName}}
-                            </mat-option>
-                        </mat-autocomplete>
-                    </p>
-                </form>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                     <span></span>
                     <span></span>

@@ -1,26 +1,3 @@
-<!-- <div class="tyn-home">
-    <form [formGroup]="form">
-        <mat-form-field class="example-full-width">
-            <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="name" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of x" [value]="option.name">
-                    {{ option.name }}
-                </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-        <button type="submit" (click)="getCards()">Search</button>
-    </form>
-    <div *ngIf="x">
-        <div *ngFor="let cards of x; let i = index">
-            <span>{{i}}</span>
-            <a (click)="getCard(cards)">{{cards.name}} | {{cards.setName}}</a>
-        </div>
-    </div>
-    <div *ngIf="image">
-        <img src="{{image}}">
-    </div>
-</div> -->
-
 <body>
     <section class="hero is-info is-fullheight">
         <div class="hero-body">
@@ -28,58 +5,12 @@
                 <div class="column is-6 is-offset-3">
                     <div class="box">
                         <div class="field is-grouped">
-                            <form [formGroup]="form">
-                                <p class="control is-expanded">
-                                    <input class="input is-medium is-primary" type="text" placeholder="Search for a card..." matInput formControlName="name"
-                                        [matAutocomplete]="auto">
-                                    <mat-autocomplete #auto="matAutocomplete">
-                                        <mat-option *ngFor="let card of x" [value]="card.name" (click)="getCard(card)">
-                                            {{ card.name }} | {{card.setName}}
-                                        </mat-option>
-                                    </mat-autocomplete>
-                                </p>
-                            </form>
                         </div>
+                        <search-bar></search-bar>
                     </div>
-                        <img src="../../assets/images/mana-symbols.png">
+                    <img src="../../assets/images/mana-symbols.png">
                 </div>
             </div>
         </div>
-
     </section>
 </body>
-<!-- <head>
-    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css" />
-    Angular Material Dependencies
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.6/angular-animate.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-aria.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script>
-    <script src="script.js"></script>
-</head>
-
-<body ng-app="materialDesignApp" ng-controller="MainCtrl" layout="column">
-    <div layout-align="center start" layout="row">
-        <form [formGroup]="form">
-            <mat-form-field class="example-full-width">
-                <input type="text" placeholder="Pick one" aria-label="Number" matInput formControlName="name" [matAutocomplete]="auto">
-                <mat-autocomplete #auto="matAutocomplete">
-                    <mat-option *ngFor="let option of x" [value]="option.name" (click)="getCard(option)">
-                        {{ option.name }}
-                    </mat-option>
-                </mat-autocomplete>
-            </mat-form-field>
-            <button type="submit" (click)="getCards()">Search</button>
-        </form> -->
-<!-- <div *ngIf="x">
-            <div *ngFor="let cards of x; let i = index">
-                <span>{{i}}</span>
-                <a (click)="getCard(cards)">{{cards.name}} | {{cards.setName}}</a>
-            </div>
-        </div>
-        <div *ngIf="image">
-            <img src="{{image}}">
-        </div> -->
-<!-- </div>
-
-</body> -->
