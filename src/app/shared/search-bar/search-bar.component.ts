@@ -1,3 +1,4 @@
+import { CardDetailStateService } from './../card-detail-state/card-detail-state.service';
 import { Card } from './../../shared/models/card';
 import { SearchService } from './../../shared/services/search.service';
 import { HttpModule, Http } from '@angular/http';
@@ -5,6 +6,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 import { Observable } from 'rxjs/Rx';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
+import { Router } from '@angular/router';
 
 @Component({
     selector: "search-bar",
@@ -19,6 +21,8 @@ export class SearchBarComponent implements OnInit {
         private searchService: SearchService,
         private formBuilder: FormBuilder,
         private dialog: MatDialog,
+        private router: Router,
+        private cardStateService: CardDetailStateService
     ) {
 
     }
@@ -33,11 +37,18 @@ export class SearchBarComponent implements OnInit {
         });
     }
 
+    // Get a list of cards based on filter
     getCards() {
         this.searchService.getCards(this.form.value.name).subscribe((response: Card[]) => {
             this.x = response;
             debugger;
         })
+    }
+
+    // Get selected card details
+    getCard(card: Card) {
+        this.cardStateService.apply(card);
+        this.router.navigate(['details']);
     }
 
 }

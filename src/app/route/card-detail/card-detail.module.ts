@@ -1,3 +1,5 @@
+import { SearchBarModule } from './../../shared/search-bar/search-bar.module';
+import { CardDetailRoutingModule } from './card-detail-routing.module';
 import { CardDetailComponent } from './card-detail.component';
 import { AngularMaterialModule } from './../../shared/modules/angular-material-design';
 import { CommonModule } from '@angular/common';
@@ -10,6 +12,8 @@ import { SearchService } from '../../shared/export';
         CommonModule,
         ReactiveFormsModule,
         AngularMaterialModule,
+        CardDetailRoutingModule,
+        SearchBarModule
     ],
     providers: [
         SearchService
@@ -21,4 +25,4 @@ import { SearchService } from '../../shared/export';
         CardDetailComponent,
     ]
 })
-export class HomeModule { }
+export class CardDetailModule { }

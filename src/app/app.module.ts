@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { APP_ROUTING } from './app.routing';
+import { AppRoutingModule } from './app.routing';
 import { HomeComponent } from './route/home/home.component';
 import { CommonModule } from '@angular/common';
 
@@ -16,7 +16,7 @@ import { CommonModule } from '@angular/common';
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        APP_ROUTING,
+        AppRoutingModule,
         HomeModule,
         HeaderModule
     ],

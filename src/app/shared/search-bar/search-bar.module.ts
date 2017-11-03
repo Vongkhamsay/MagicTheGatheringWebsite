@@ -1,3 +1,4 @@
+import { CardDetailStateModule } from './../card-detail-state/card-detail-state.module';
 import { SearchService } from './../services/search.service';
 import { AngularMaterialModule } from './../modules/angular-material-design';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -10,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         CommonModule,
         ReactiveFormsModule,
         AngularMaterialModule,
+        CardDetailStateModule
     ],
     providers: [
         SearchService

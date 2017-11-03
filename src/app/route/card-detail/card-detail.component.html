@@ -1,34 +1,35 @@
-<body>
-    <section>
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="columns is-vcentered">
-                    <div class="column is-5">
-                        <figure class="image is-2x2">
-                            <div *ngIf="data.card.imageUrl">
-                                <img src="{{data.card.imageUrl}}">
-                            </div>
-                            <div *ngIf="!data.card.imageUrl">
-                                <span>No image available.</span>
-                            </div>
-                        </figure>
-                    </div>
-                    <div class="column is-6 is-offset-1">
-                        <h1 class="title is-2">
-                            {{data.card.name}}
-                        </h1>
-                        <h2 class="subtitle is-4">
-                            {{data.card.text}}
-                        </h2>
-                        <br>
-                        <p class="has-text-centered">
-                            <!-- <a class="button is-medium is-info is-outlined">
+<div class="container">
+    <div class="search-bar">
+        <search-bar></search-bar>
+    </div>
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-5">
+                    <figure class="">
+                        <div *ngIf="card.imageUrl">
+                            <img src="{{card.imageUrl}}">
+                        </div>
+                        <div *ngIf="!card.imageUrl">
+                            <span>No image available.</span>
+                        </div>
+                    </figure>
+                </div>
+                <div class="column">
+                    <h1 class="title is-2">
+                        {{card.name}}
+                    </h1>
+                    <h2 class="subtitle is-4">
+                        {{card.text}}
+                    </h2>
+                    <br>
+                    <p class="has-text-centered">
+                        <!-- <a class="button is-medium is-info is-outlined">
                                     Learn more
                                 </a> -->
-                        </p>
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-</body>
+    </div>
+</div>

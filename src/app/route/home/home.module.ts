@@ -1,5 +1,5 @@
+import { HomeRoutingModule } from './home-routing.module';
 import { SearchBarModule } from './../../shared/search-bar/search-bar.module';
-import { DialogDataExampleDialog } from './home-dialog';
 import { AngularMaterialModule } from './../../shared/modules/angular-material-design';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -12,6 +12,7 @@ import { SearchService } from '../../shared/export';
         CommonModule,
         ReactiveFormsModule,
         AngularMaterialModule,
+        HomeRoutingModule,
         SearchBarModule
     ],
     providers: [
@@ -19,13 +20,11 @@ import { SearchService } from '../../shared/export';
     ],
     declarations: [
         HomeComponent,
-        DialogDataExampleDialog
     ],
     exports: [
         HomeComponent,
     ],
     entryComponents: [
-        DialogDataExampleDialog
     ]
 })
 export class HomeModule { }
