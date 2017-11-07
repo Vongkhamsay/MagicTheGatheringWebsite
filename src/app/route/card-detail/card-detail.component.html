@@ -1,10 +1,11 @@
 <div class="container">
     <div class="search-bar">
+        {{card | json}}
         <search-bar></search-bar>
     </div>
     <div class="hero-body">
         <div class="container has-text-centered">
-            <div class="columns is-vcentered">
+            <div class="columns">
                 <div class="column is-5">
                     <figure class="">
                         <div *ngIf="card.imageUrl">
@@ -16,15 +17,59 @@
                     </figure>
                 </div>
                 <div class="column">
-                    <h1 class="title is-2">
-                        {{card.name}}
-                    </h1>
-                    <h2 class="subtitle is-4">
-                        {{card.text}}
-                    </h2>
+                    <div class="columns name-header">
+                        <div class="column">
+                            <h3 class="title is-3">
+                                {{card.name}}
+                            </h3>
+                        </div>
+                        <div class="column">
+                            <span>{{card.manaCost}}</span>
+
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="subtitle is-4">
+                            {{card.text}}
+                        </h2>
+                    </div>
+                    <div class="columns">
+                        <div class="column desc-footer desc-footer-left">
+                            <div>
+                                <span>Type</span>
+                            </div>
+                            <div>
+                                <span>{{card.type}}</span>
+                            </div>
+                        </div>
+                        <div class="column desc-footer ">
+                            <div>
+                                <span>Rarity</span>
+                            </div>
+                            <div>
+                                <span>{{card.rarity}}</span>
+                            </div>
+                        </div>
+                        <div class="column desc-footer ">
+                            <div>
+                                <span>Power</span>
+                            </div>
+                            <div>
+                                <span>{{card.power}}</span>
+                            </div>
+                        </div>
+                        <div class="column desc-footer ">
+                            <div>
+                                <span>Toughness</span>
+                            </div>
+                            <div>
+                                <span>{{card.toughness}}</span>
+                            </div>
+                        </div>
+                    </div>
                     <br>
-                    <p class="has-text-centered">
-                        <!-- <a class="button is-medium is-info is-outlined">
+                    <p class="has-text-centered ">
+                        <!-- <a class="button is-medium is-info is-outlined ">
                                     Learn more
                                 </a> -->
                     </p>

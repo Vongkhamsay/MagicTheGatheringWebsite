@@ -3,6 +3,7 @@ export class Card {
     name: string;
     layout: string;
     cmc: string;
+    manaCost: string;
     colors: string[];
     type: string;
     supertypes: string;
@@ -30,6 +31,7 @@ export class Card {
         this.name = card.name;
         this.layout = card.layout;
         this.cmc = card.cmc;
+        this.manaCost = card.manaCost;
         this.colors = card.colors;
         this.type = card.type;
         this.supertypes = card.supertypes;

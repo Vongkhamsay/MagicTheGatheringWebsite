@@ -3,3 +3,21 @@
 .search-bar {
     margin-top: 2rem;
 }
+
+.name-header {
+    // display: -webkit-box;
+    // display: flex;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px $primary-color solid;
+    // flex-flow: row wrap;
+}
+
+.desc-footer {
+    margin-top: 5em;
+    border-right: 1px $primary-color solid;
+}
+
+.desc-footer-left {
+    border-left: 1px $primary-color solid;    
+}
