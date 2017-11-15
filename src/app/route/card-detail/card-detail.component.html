@@ -4,9 +4,9 @@
         <search-bar></search-bar>
     </div>
     <div class="hero-body">
-        <div class="container has-text-centered">
+        <div class="container">
             <div class="columns">
-                <div class="column is-5">
+                <div class="column is-5 has-text-centered">
                     <figure class="">
                         <div *ngIf="card.imageUrl">
                             <img src="{{card.imageUrl}}">
@@ -17,7 +17,7 @@
                     </figure>
                 </div>
                 <div class="column">
-                    <div class="columns name-header">
+                    <div class="columns name-header has-text-centered">
                         <div class="column">
                             <h3 class="title is-3">
                                 {{card.name}}
@@ -28,12 +28,15 @@
 
                         </div>
                     </div>
-                    <div>
-                        <h2 class="subtitle is-4">
+                    <div class="line-break">
+                        <h2 class="subtitle is-5">
                             {{card.text}}
                         </h2>
                     </div>
-                    <div class="columns">
+                    <div class="subtitle is-6">
+                        {{card.flavor}}
+                    </div>
+                    <div class="columns has-text-centered">
                         <div class="column desc-footer desc-footer-left">
                             <div>
                                 <span>Type</span>
@@ -50,7 +53,20 @@
                                 <span>{{card.rarity}}</span>
                             </div>
                         </div>
-                        <div class="column desc-footer ">
+
+                        <!-- Checks to see if its a planeswalker -->
+                        <div *ngIf="card.types == 'Planeswalker'" class="column desc-footer">
+                            <div>
+                                <span>
+                                    Loyalty
+                                </span>
+                            </div>
+                            <div>
+                                <span>{{card.loyalty}}</span>
+                            </div>
+                        </div>
+                        <!-- Checks to see if its a creature -->
+                        <div *ngIf="card.types == 'Creature'" class="column desc-footer ">
                             <div>
                                 <span>Power</span>
                             </div>
@@ -58,7 +74,7 @@
                                 <span>{{card.power}}</span>
                             </div>
                         </div>
-                        <div class="column desc-footer ">
+                        <div *ngIf="card.types == 'Creature'" class="column desc-footer ">
                             <div>
                                 <span>Toughness</span>
                             </div>
