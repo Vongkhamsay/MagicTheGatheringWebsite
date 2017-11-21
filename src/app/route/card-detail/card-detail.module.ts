@@ -1,6 +1,6 @@
 import { SearchBarModule } from './../../shared/search-bar/search-bar.module';
 import { CardDetailRoutingModule } from './card-detail-routing.module';
-import { CardDetailComponent } from './card-detail.component';
+import { CardDetailComponent } from './card-details/card-detail.component';
 import { AngularMaterialModule } from './../../shared/modules/angular-material-design';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';

@@ -1,4 +1,4 @@
-import { CardDetailComponent } from './card-detail.component';
+import { CardDetailComponent } from './card-details/card-detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 
