@@ -5,7 +5,14 @@
     </div>
     <div class="hero-body">
         <div class="container">
-            <div class="columns">
+            <div class="columns name-header has-text-centered">
+                <div class="column">
+                    <h3 class="title is-3">
+                        {{card.name}}
+                    </h3>
+                </div>
+            </div>
+            <div class="columns details-section">
                 <div class="column is-5 has-text-centered">
                     <figure class="">
                         <div *ngIf="card.imageUrl">
@@ -17,17 +24,7 @@
                     </figure>
                 </div>
                 <div class="column">
-                    <div class="columns name-header has-text-centered">
-                        <div class="column">
-                            <h3 class="title is-3">
-                                {{card.name}}
-                            </h3>
-                        </div>
-                        <div class="column">
-                            <span>{{card.manaCost}}</span>
-
-                        </div>
-                    </div>
+                    <details-tabs></details-tabs>
                     <div class="line-break">
                         <h2 class="subtitle is-5">
                             {{card.text}}
@@ -37,6 +34,14 @@
                         {{card.flavor}}
                     </div>
                     <div class="columns has-text-centered">
+                        <div class="column desc-footer desc-footer-left">
+                            <div>
+                                Mana Cost
+                            </div>
+                            <div>
+                                <span>{{card.manaCost}}</span>
+                            </div>
+                        </div>
                         <div class="column desc-footer desc-footer-left">
                             <div>
                                 <span>Type</span>

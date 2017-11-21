@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { SearchService } from '../../shared/export';
+import { DetailsTabsModule } from './../../shared/details-tabs/details-tabs.module';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { SearchService } from '../../shared/export';
         ReactiveFormsModule,
         AngularMaterialModule,
         CardDetailRoutingModule,
-        SearchBarModule
+        SearchBarModule,
+        DetailsTabsModule
     ],
     providers: [
         SearchService
