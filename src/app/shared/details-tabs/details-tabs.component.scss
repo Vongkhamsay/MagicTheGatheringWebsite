@@ -1,0 +1,18 @@
+@import "../../../global";
+
+.desc-footer {
+    margin-top: 5em;
+    border-right: 1px $primary-color solid;
+}
+
+.desc-footer-left {
+    border-left: 1px $primary-color solid;    
+}
+
+.line-break {
+    white-space: pre-line;
+}
+
+.details-section {
+    margin-top: 25px;
+}
