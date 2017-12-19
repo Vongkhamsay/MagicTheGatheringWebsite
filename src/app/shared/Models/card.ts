@@ -27,6 +27,10 @@ export class Card {
     multiverseid: string;
     imageUrl: string;
 
+    // Added model
+
+    printings: string[];
+
     constructor(card: Card) {
         this.name = card.name;
         this.layout = card.layout;
@@ -54,5 +58,9 @@ export class Card {
         this.id = card.id;
         this.multiverseid = card.multiverseid;
         this.imageUrl = card.imageUrl;
+
+        //Added Model
+
+        this.printings = card.printings;
     }
 }

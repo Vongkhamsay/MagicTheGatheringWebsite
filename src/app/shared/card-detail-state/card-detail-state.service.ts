@@ -13,6 +13,7 @@ export class CardDetailStateService extends ExpiringLocalStorageStateService<Car
 
     private stateSub: BehaviorSubject<Card> = new BehaviorSubject<Card>(this.value);
 
+    // If card data does not properly, check the model to see if the property is on the model
     public get watch(): Observable<Card> {
         return this.stateSub.asObservable();
     }
